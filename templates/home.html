@@ -223,16 +223,15 @@
 
       <section class="container-fluid mx-auto mb-5" style="transform: translateY(-2vh);">
         <div
-          class="row row-cols-1 row-cols-lg-3 row-cols-md-3 row-cols-xl-4 g-3"
+          class="row row-cols-1 row-cols-lg-3 row-cols-md-3 row-cols-xl-6 g-3"
         >
         {% for i in object_list %}
-          <div class="col">
+          <div class="col" style="margin-top: 50px;">
             <div class="p-3 rounded-3 shadow white">
               <h4 style="text-align: center">{{i.name}}</h4>
-              <img src="{{ i.image.url }}" alt="" style=" height: 200px; width:100% ; object-fit: cover;" />
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
-                voluptatem dolorum consequuntur labore obcaecati illum.
+              <img src="{{ i.image.url }}" alt="" style=" height: 100px; width:100% ; object-fit: cover;" />
+              <p style="text-align : center;">
+                Bu sahifa test rejimida ishlamoqda
               </p>
               <h4 style="text-align : center; text-color:green">{{ i.cost}} so'm</h4>
               <a href="#" class="btn custom_btn" style="width:100%">Shop Now</a>
@@ -258,60 +257,25 @@
                   g-5
                 "
               >
+              {% for i in object_list %}
                 <div class="col">
                   <div class="p-4 white rounded-3">
-                    <img src="images/shoes/shoe-1.png" alt="" width="100%" />
-                    <h4>Nike 414</h4>
+                    {% if i.image%}
+                      <img src="{{ i.image.url }}" alt="" width="100%" />
+                    {% endif %}
+                    <h4>{{i.name}}</h4>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Dolores dignissimos praesentium perspiciatis molestias!
-                      Inventore, ab!
+                      BU sayt test rejimida ishlamoqda
                     </p>
-                    <h4>$299</h4>
-                    <button class="btn custom_btn">Shop Now</button>
+                    <h4>{{i.cost}} so'm</h4>
+                    <button class="btn custom_btn">Ko'rish</button>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="p-4 white rounded-3">
-                    <img src="images/shoes/shoe-1.png" alt="" width="100%" />
-                    <h4>Nike 414</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Dolores dignissimos praesentium perspiciatis molestias!
-                      Inventore, ab!
-                    </p>
-                    <h4>$299</h4>
-                    <button class="btn custom_btn">Shop Now</button>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="p-4 white rounded-3">
-                    <img src="images/shoes/shoe-1.png" alt="" width="100%" />
-                    <h4>Nike 414</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Dolores dignissimos praesentium perspiciatis molestias!
-                      Inventore, ab!
-                    </p>
-                    <h4>$299</h4>
-                    <button class="btn custom_btn">Shop Now</button>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="p-4 white rounded-3">
-                    <img src="images/shoes/shoe-1.png" alt="" width="100%" />
-                    <h4>Nike 414</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Dolores dignissimos praesentium perspiciatis molestias!
-                      Inventore, ab!
-                    </p>
-                    <h4>$299</h4>
-                    <button class="btn custom_btn">Shop Now</button>
-                  </div>
-                </div>
+               {% endfor %}
               </div>
             </div>
+          </div>
+
             <div class="carousel-item">
               <div
                 class="
